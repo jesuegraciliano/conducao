@@ -3,55 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conversor de Unidades & Calor Sensível</title>
+  <title>Calculadora de Condução Térmica de Parede</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <img src="logo-ifsc.png" alt="Instituto Federal Santa Catarina" id="header-logo">
-    <h1>Conversor de Unidades e Cálculo de Calor Sensível</h1>
+    <h1>Calculadora de Condução Térmica de Parede</h1>
   </header>
 
-  <!-- Seção de conversão de unidades -->
-  <section id="conversor">
-    <h2>Conversão de Unidades</h2>
+  <section>
     <label>
-      Valor:
-      <input type="number" id="input-value" step="any" placeholder="Insira um valor">
-    </label>
-    <label>
-      De:
-      <select id="input-unit">
-        <option value="kcal">kcal → kJ</option>
-        <option value="g">g → kg</option>
-        <option value="psi">psi → kPa</option>
+      Material:
+      <select id="material">
+        <option value="0.9">Tijolos (0,9 W/m·°C)</option>
+        <option value="0.028">Isopor (0,028 W/m·°C)</option>
+        <option value="0.022">Poliuretano (0,022 W/m·°C)</option>
+        <option value="0.04">Camada de Ar (0,04 W/m·°C)</option>
       </select>
     </label>
-    <button id="btn-converter">Converter</button>
-    <div id="resultado-conversao"></div>
-  </section>
 
-  <!-- Seção de cálculo de calor sensível -->
-  <section id="calor-sensivel">
-    <h2>Cálculo de Calor Sensível</h2>
     <label>
-      Massa (kg):
-      <input type="number" id="massa" step="any" value="3">
+      Espessura da parede (m):
+      <input type="text" id="espessura" placeholder="0,15">
     </label>
+
     <label>
-      Calor específico (kJ/kg·°C):
-      <input type="number" id="calor-especifico" step="any" value="4.186">
+      ΔT (°C):
+      <input type="text" id="deltaT" placeholder="7">
     </label>
+
     <label>
-      Temperatura inicial (°C):
-      <input type="number" id="t-inicial" step="any" value="20">
+      Área da parede (m²):
+      <input type="text" id="area" placeholder="10">
     </label>
-    <label>
-      Temperatura final (°C):
-      <input type="number" id="t-final" step="any" value="90">
-    </label>
-    <button id="btn-calcular">Calcular Qₛ</button>
-    <div id="resultado-calor"></div>
+
+    <button id="btn-calcular">Calcular Q</button>
+    <div id="resultado"></div>
   </section>
 
   <script src="script.js"></script>
